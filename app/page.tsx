@@ -1,5 +1,6 @@
 "use client"; // Required for Framer Motion and TypeAnimation in Next.js App Router
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
@@ -169,19 +170,19 @@ export default function Home() {
               </p>
 
               {/* Custom Embedded Architecture Diagram */}
-              <div className="mt-4 p-3 bg-slate-950/60 rounded-lg border border-slate-900/60 font-mono text-[10px] text-slate-500 overflow-x-auto">
-                <div className="flex items-center space-x-2 min-w-[500px] justify-center text-center">
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">SEC Filing</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">Parser</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">Embeddings</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-blue-950/40 border border-blue-900/40 rounded text-blue-400 font-bold">FAISS</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">LangChain</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-emerald-950/40 border border-emerald-900/40 rounded text-emerald-400">Citation Layer</span>
+              <div className="mt-5 p-3 bg-slate-950/60 rounded-lg border border-slate-900/60 font-mono text-slate-500 overflow-x-auto scrollbar-none">
+                <div className="flex items-center space-x-1.5 min-w-[620px] justify-between text-center text-[11px] tracking-tight">
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">SEC Filing</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Parser</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Embeddings</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-3 h-8 bg-blue-500/10 border border-blue-500/30 rounded text-blue-400 font-semibold whitespace-nowrap shadow-sm shadow-blue-500/5">FAISS DB</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">LangChain</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-3 h-8 bg-blue-500/10 border border-blue-500/30 rounded text-blue-400 font-semibold whitespace-nowrap shadow-sm shadow-blue-500/5">Citation Layer</span>
                 </div>
               </div>
 
@@ -211,19 +212,19 @@ export default function Home() {
               </p>
 
               {/* Custom Embedded MLOps Architecture Diagram */}
-              <div className="mt-4 p-3 bg-slate-950/60 rounded-lg border border-slate-900/60 font-mono text-[10px] text-slate-500 overflow-x-auto">
-                <div className="flex items-center space-x-2 min-w-[500px] justify-center text-center">
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">Data Ingestion</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-purple-950/40 border border-purple-900/40 rounded text-purple-400 font-bold">DVC Lineage</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">GitHub Actions</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">MLflow Tracking</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-slate-900 border border-slate-800 rounded text-slate-400">Docker API</span>
-                  <span>→</span>
-                  <span className="px-2 py-1 bg-red-950/40 border border-red-900/40 rounded text-red-400">EvidentlyAI Drift</span>
+              <div className="mt-5 p-3 bg-slate-950/60 rounded-lg border border-slate-900/60 font-mono text-slate-500 overflow-x-auto scrollbar-none">
+                <div className="flex items-center space-x-1.5 min-w-[620px] justify-between text-center text-[11px] tracking-tight">
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Data Ingestion</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-3 h-8 bg-purple-500/10 border border-purple-500/30 rounded text-purple-400 font-semibold whitespace-nowrap shadow-sm shadow-purple-500/5">DVC Lineage</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">GitHub Actions</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">MLflow Tracking</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Docker API</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-3 h-8 bg-purple-500/10 border border-purple-500/30 rounded text-purple-400 font-semibold whitespace-nowrap shadow-sm shadow-purple-500/5">EvidentlyAI Drift</span>
                 </div>
               </div>
 
@@ -251,6 +252,22 @@ export default function Home() {
               <p className="text-sm text-slate-400 mt-4 leading-relaxed">
                 Designed an automated high-throughput privacy processing framework to intercept unstructured context payloads, programmatically stripping/masking PII configurations to safeguard backend training contexts against implicit data leakage vectors.
               </p>
+
+              {/* Custom Embedded Security Architecture Diagram */}
+              <div className="mt-5 p-3 bg-slate-950/60 rounded-lg border border-slate-900/60 font-mono text-slate-500 overflow-x-auto scrollbar-none">
+                <div className="flex items-center space-x-1.5 min-w-[620px] justify-between text-center text-[11px] tracking-tight">
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Context Payload</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Regex Pipeline</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-3 h-8 bg-emerald-500/10 border border-emerald-500/30 rounded text-emerald-400 font-semibold whitespace-nowrap shadow-sm shadow-emerald-500/5">Redaction Engine</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-2.5 h-8 bg-slate-900 border border-slate-800 rounded text-slate-400 whitespace-nowrap">Masking Layer</span>
+                  <span className="text-slate-700 font-sans select-none">→</span>
+                  <span className="flex items-center justify-center px-3 h-8 bg-emerald-500/10 border border-emerald-500/30 rounded text-emerald-400 font-semibold whitespace-nowrap shadow-sm shadow-emerald-500/5">Secure Payload</span>
+                </div>
+              </div>
+
               <div className="mt-4 flex flex-wrap gap-2 text-[11px] font-mono text-slate-500">
                 <span className="bg-slate-950 px-2 py-0.5 rounded border border-slate-900 text-slate-400 hover:text-blue-400 transition-colors">Python</span>
                 <span className="bg-slate-950 px-2 py-0.5 rounded border border-slate-900 text-slate-400 hover:text-blue-400 transition-colors">RegexPipeline</span>
@@ -318,9 +335,11 @@ export default function Home() {
             {/* Cert 1: Google Gemini */}
             <div className="p-4 rounded-xl border border-slate-900 bg-slate-900/10 flex items-center gap-4 hover:border-slate-800 transition-colors group">
               <div className="flex items-center justify-center p-1.5 rounded-lg bg-blue-500/5 border border-blue-500/10 w-16 h-16 group-hover:border-blue-500/30 transition-colors shrink-0 overflow-hidden">
-                <img 
+                <Image 
                   src="/google-associate.png" 
                   alt="Google Gemini Specialist" 
+                  width={64}
+                  height={64}
                   className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(59,130,246,0.15)] group-hover:drop-shadow-[0_0_6px_rgba(59,130,246,0.3)] transition-all duration-300"
                 />
               </div>
@@ -330,7 +349,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/10 font-bold">Certified Partner Specialist</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Building custom AI agents, API integrations, and system-level prompt tuning configurations.
+                  Issued by Google Cloud
                 </p>
               </div>
             </div>
@@ -338,9 +357,11 @@ export default function Home() {
             {/* Cert 2: Azure AI Apps */}
             <div className="p-4 rounded-xl border border-slate-900 bg-slate-900/10 flex items-center gap-4 hover:border-slate-800 transition-colors group">
               <div className="flex items-center justify-center p-1.5 rounded-lg bg-cyan-500/5 border border-cyan-500/10 w-16 h-16 group-hover:border-cyan-500/30 transition-colors shrink-0 overflow-hidden">
-                <img 
+                <Image 
                   src="/microsoft-associate.png" 
                   alt="Microsoft Certified Associate" 
+                  width={64}
+                  height={64}
                   className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(6,182,212,0.15)] group-hover:drop-shadow-[0_0_6px_rgba(6,182,212,0.3)] transition-all duration-300"
                 />
               </div>
@@ -349,15 +370,20 @@ export default function Home() {
                   <span className="font-medium text-slate-200 text-sm">Microsoft Certified: Azure AI Apps and Agents Developer Associate</span>
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/10 font-bold">AI-103</span>
                 </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  Issued by Microsoft  
+                </p>
               </div>
             </div>
 
             {/* Cert 3: Azure AI Cloud */}
             <div className="p-4 rounded-xl border border-slate-900 bg-slate-900/10 flex items-center gap-4 hover:border-slate-800 transition-colors group">
               <div className="flex items-center justify-center p-1.5 rounded-lg bg-cyan-500/5 border border-cyan-500/10 w-16 h-16 group-hover:border-cyan-500/30 transition-colors shrink-0 overflow-hidden">
-                <img 
+                <Image 
                   src="/microsoft-associate.png" 
                   alt="Microsoft Certified Associate" 
+                  width={64}
+                  height={64}
                   className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(6,182,212,0.15)] group-hover:drop-shadow-[0_0_6px_rgba(6,182,212,0.3)] transition-all duration-300"
                 />
               </div>
@@ -366,15 +392,20 @@ export default function Home() {
                   <span className="font-medium text-slate-200 text-sm">Microsoft Certified: Azure AI Cloud Developer Associate</span>
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/10 font-bold">AI-200</span>
                 </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  Issued by Microsoft  
+                </p>
               </div>
             </div>
 
             {/* Cert 4: LLM Security Professional */}
             <div className="p-4 rounded-xl border border-slate-900 bg-slate-900/10 flex items-center gap-4 hover:border-slate-800 transition-colors group">
               <div className="flex items-center justify-center p-1.5 rounded-lg bg-red-500/5 border border-red-500/10 w-16 h-16 group-hover:border-red-500/30 transition-colors shrink-0 overflow-hidden">
-                <img 
+                <Image 
                   src="/cllmsp-associate.png" 
                   alt="Certified LLM Security Professional" 
+                  width={64}
+                  height={64}
                   className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(239,68,68,0.15)] group-hover:drop-shadow-[0_0_6px_rgba(239,68,68,0.3)] transition-all duration-300"
                 />
               </div>
@@ -383,15 +414,20 @@ export default function Home() {
                   <span className="font-medium text-slate-200 text-sm">Certified LLM Security Professional</span>
                   <span className="text-[10px] uppercase tracking-wide bg-red-500/10 text-red-400 px-2 py-0.5 rounded border border-red-500/10 font-bold">Red Team Leaders</span>
                 </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  Issued by Red Team Leaders
+                </p>
               </div>
             </div>
 
             {/* Cert 5: Hugging Face Deep RL */}
             <div className="p-4 rounded-xl border border-slate-900 bg-slate-900/10 flex items-center gap-4 hover:border-slate-800 transition-colors group">
               <div className="flex items-center justify-center p-1.5 rounded-lg bg-amber-500/5 border border-amber-500/10 w-16 h-16 group-hover:border-amber-500/30 transition-colors shrink-0 overflow-hidden">
-                <img 
+                <Image 
                   src="/hugging-face-associate.png" 
                   alt="Hugging Face Deep RL Certification" 
+                  width={64}
+                  height={64}
                   className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(245,158,11,0.15)] group-hover:drop-shadow-[0_0_6px_rgba(245,158,11,0.3)] transition-all duration-300"
                 />
               </div>
@@ -400,28 +436,68 @@ export default function Home() {
                   <span className="font-medium text-slate-200 text-sm">Deep RL Certification</span>
                   <span className="text-[10px] uppercase tracking-wide bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/10 font-bold">Hugging Face</span>
                 </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  Issued by Hugging Face 
+                </p>
+              </div>
+            </div>
+     {/* Cert 5: Airflow */}
+            <div className="p-4 rounded-xl border border-slate-900 bg-slate-900/10 flex items-center gap-4 hover:border-slate-800 transition-colors group">
+              <div className="flex items-center justify-center p-1.5 rounded-lg bg-amber-500/5 border border-amber-500/10 w-16 h-16 group-hover:border-amber-500/30 transition-colors shrink-0 overflow-hidden">
+                <Image 
+                  src="/apache-airflow.jpg" 
+                  alt="Apache Airflow Certification" 
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-contain filter drop-shadow-[0_0_4px_rgba(245,158,11,0.15)] group-hover:drop-shadow-[0_0_6px_rgba(245,158,11,0.3)] transition-all duration-300"
+                />
+              </div>
+              <div className="space-y-1">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <span className="font-medium text-slate-200 text-sm">Apache Airflow Certification</span>
+                  <span className="text-[10px] uppercase tracking-wide bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/10 font-bold">Astronomer</span>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed font-sans">
+                  Issued by Astronomer
+                </p>
               </div>
             </div>
 
           </div>
         </motion.section>
 
-        {/* --- TECHNICAL SKILL MATRIX --- */}
+        {/* --- TECHNICAL SKILLS --- */}
         <motion.section {...fadeInUp} className="space-y-6">
           <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2 text-slate-200">
-            <span className="text-blue-500 font-mono text-base">&gt;</span> Core Capabilities
+            <span className="text-blue-500 font-mono text-base">&gt;</span> Technical Skills
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm font-mono">
-            <div className="p-5 rounded-xl border border-slate-900 bg-slate-900/10 space-y-3">
-              <div className="text-blue-400 font-semibold tracking-wider uppercase text-[11px]">AI Execution & Systems</div>
+            {/* Languages */}
+            <div className="p-5 rounded-xl border border-slate-900 bg-slate-900/10 space-y-3 hover:border-slate-800 transition-colors duration-300">
+              <div className="text-blue-400 font-semibold tracking-wider uppercase text-[11px]">Languages</div>
               <div className="text-slate-400 leading-relaxed">
-                Python, SQL, PyTorch, TensorFlow, LangChain, LlamaIndex, Scikit-Learn, Pandas, Vector Repositories (FAISS, ChromaDB), Agentic AI
+                Python, SQL, Bash
               </div>
             </div>
-            <div className="p-5 rounded-xl border border-slate-900 bg-slate-900/10 space-y-3">
-              <div className="text-blue-400 font-semibold tracking-wider uppercase text-[11px]">MLOps & Delivery Environments</div>
+            {/* Machine Learning */}
+            <div className="p-5 rounded-xl border border-slate-900 bg-slate-900/10 space-y-3 hover:border-slate-800 transition-colors duration-300">
+              <div className="text-emerald-400 font-semibold tracking-wider uppercase text-[11px]">Machine Learning</div>
               <div className="text-slate-400 leading-relaxed">
-                MLflow, DVC, Airflow, Docker, Kubernetes, Azure ML Studio, AWS (SageMaker, Bedrock), GitHub Actions, FastAPI, Linux
+                PyTorch, TensorFlow, Scikit-Learn, Pandas, NumPy
+              </div>
+            </div>
+            {/* Frameworks & Libraries */}
+            <div className="p-5 rounded-xl border border-slate-900 bg-slate-900/10 space-y-3 hover:border-slate-800 transition-colors duration-300">
+              <div className="text-purple-400 font-semibold tracking-wider uppercase text-[11px]">Frameworks & Libraries</div>
+              <div className="text-slate-400 leading-relaxed">
+                LangChain, LlamaIndex, FastAPI, FAISS, ChromaDB
+              </div>
+            </div>
+            {/* Cloud & MLOps */}
+            <div className="p-5 rounded-xl border border-slate-900 bg-slate-900/10 space-y-3 hover:border-slate-800 transition-colors duration-300">
+              <div className="text-amber-400 font-semibold tracking-wider uppercase text-[11px]">Cloud & MLOps</div>
+              <div className="text-slate-400 leading-relaxed">
+                AWS (SageMaker, Bedrock), Azure ML Studio, Docker, Kubernetes, MLflow, DVC, Airflow, GitHub Actions
               </div>
             </div>
           </div>

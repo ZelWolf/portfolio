@@ -379,7 +379,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30 font-bold">Certified Partner Specialist</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Building custom AI agents, API integrations, and system-level prompt tuning configurations.
+                  Issued by Google Cloud
                 </p>
               </div>
             </div>
@@ -401,7 +401,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30 font-bold">AI-103</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Architecting and deploying end-to-end generative AI agents and intelligent applications leveraging the Microsoft Foundry ecosystem.
+                  Issued by Microsoft
                 </p>
               </div>
             </div>
@@ -423,7 +423,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30 font-bold">AI-200</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Implementing production-grade AI solutions on Azure, focusing on scalable back-end infrastructure, containerized services, and vector data management.
+                  Issued by Microsoft  
                 </p>
               </div>
             </div>
@@ -445,7 +445,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-red-500/10 text-red-400 px-2 py-0.5 rounded border border-red-500/30 font-bold">Red Team Leaders</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Engineering robust defensive architectures for LLM systems, specializing in mitigating prompt injection, jailbreaks, and RAG-based data exfiltration.
+                  Issued by Red Team Leaders  
                 </p>
               </div>
             </div>
@@ -464,10 +464,10 @@ export default function Home() {
               <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                   <span className="font-semibold text-slate-100 text-sm">Deep RL Certification</span>
-                  <span className="text-[10px] uppercase tracking-wide bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/30 font-bold">Hugging Face</span>
+                  <span className="text-[10px] uppercase tracking-wide bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30 font-bold">Hugging Face</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Mastering reinforcement learning theory and policy optimization to develop autonomous agents capable of complex decision-making in simulated environments.
+                  Issued by Hugging Face  
                 </p>
               </div>
             </div>
@@ -486,10 +486,10 @@ export default function Home() {
               <div className="space-y-1">
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                   <span className="font-semibold text-slate-100 text-sm">Apache Airflow Certification</span>
-                  <span className="text-[10px] uppercase tracking-wide bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30 font-bold">Astronomer</span>
+                  <span className="text-[10px] uppercase tracking-wide bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/30 font-bold">Astronomer</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Architecting scalable data pipelines and orchestrating complex workflow dependencies for automated machine learning lifecycles.
+                  Issued by Astronomer 
                 </p>
               </div>
             </div>

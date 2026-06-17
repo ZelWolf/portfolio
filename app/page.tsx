@@ -14,6 +14,13 @@ export default function Home() {
     setTimeout(() => setCopied(false), 2000); // Reset button after 2 seconds
   };
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   // Reusable animation configuration for sections
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -25,6 +32,21 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 relative overflow-hidden select-none">
       
+      {/* --- HORIZONTAL FLOATING NAVIGATION BAR --- */}
+      <nav className="fixed z-50 pointer-events-none top-6 left-1/2 -translate-x-1/2 w-max transition-all duration-300">
+        <div className="pointer-events-auto flex items-center gap-1 sm:gap-2 px-4 py-2.5 rounded-full bg-slate-900/80 border border-slate-700/80 backdrop-blur-md shadow-2xl shadow-black/80 font-mono text-[10px] sm:text-xs">
+          <button onClick={() => scrollToSection('projects')} className="px-3 py-1.5 rounded-full text-slate-300 hover:text-blue-400 hover:bg-slate-800 transition-all">Projects</button>
+          <button onClick={() => scrollToSection('experience')} className="px-3 py-1.5 rounded-full text-slate-300 hover:text-blue-400 hover:bg-slate-800 transition-all">Experience</button>
+          <button onClick={() => scrollToSection('certs')} className="px-3 py-1.5 rounded-full text-slate-300 hover:text-blue-400 hover:bg-slate-800 transition-all hidden sm:block">Certifications</button>
+          <button onClick={() => scrollToSection('skills')} className="px-3 py-1.5 rounded-full text-slate-300 hover:text-blue-400 hover:bg-slate-800 transition-all hidden sm:block">Skills</button>
+          <div className="w-[1px] h-4 bg-slate-700 mx-1 sm:mx-0"></div>
+          <button onClick={() => scrollToSection('contact')} className="px-3 py-1.5 rounded-full text-blue-400 font-semibold hover:bg-blue-500/10 transition-all flex items-center justify-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Contact
+          </button>
+        </div>
+      </nav>
+
       {/* --- ENHANCED BACKGROUND ARCHITECTURE --- */}
       {/* Subtle tech grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
@@ -35,7 +57,7 @@ export default function Home() {
       <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
       
       {/* Main Layout Container */}
-      <main className="relative max-w-3xl mx-auto px-6 py-20 space-y-24">
+      <main className="relative max-w-3xl mx-auto px-6 py-28 sm:py-32 space-y-24">
         
         {/* --- HERO SECTION --- */}
         <motion.section {...fadeInUp} className="space-y-8">
@@ -60,7 +82,6 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Boosted Text Contrast here */}
             <p className="text-slate-300 max-w-xl leading-relaxed text-sm sm:text-base">
               Building robust machine learning infrastructure, high-throughput pipeline architectures, and secure AI evaluation guardrails. Focused on reliability and defensive design.
             </p>
@@ -154,7 +175,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- CORE PRODUCTION PROJECTS --- */}
-        <motion.section {...fadeInUp} className="space-y-6">
+        <motion.section id="projects" {...fadeInUp} className="space-y-6 pt-12">
           <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2 text-slate-100">
             <span className="text-blue-500 font-mono text-base">&gt;</span> Engineering Repositories
           </h2>
@@ -288,7 +309,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- WORK EXPERIENCE SECTION --- */}
-        <motion.section {...fadeInUp} className="space-y-6">
+        <motion.section id="experience" {...fadeInUp} className="space-y-6 pt-12">
           <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2 text-slate-100">
             <span className="text-blue-500 font-mono text-base">&gt;</span> Industry Deployments
           </h2>
@@ -334,7 +355,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- CERTIFICATIONS SECTION --- */}
-        <motion.section {...fadeInUp} className="space-y-6">
+        <motion.section id="certs" {...fadeInUp} className="space-y-6 pt-12">
           <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2 text-slate-100">
             <span className="text-blue-500 font-mono text-base">&gt;</span> Verified Certifications
           </h2>
@@ -358,7 +379,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30 font-bold">Certified Partner Specialist</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Issued by Google Cloud
+                  Building custom AI agents, API integrations, and system-level prompt tuning configurations.
                 </p>
               </div>
             </div>
@@ -380,7 +401,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30 font-bold">AI-103</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Issued by Microsoft  
+                  Architecting and deploying end-to-end generative AI agents and intelligent applications leveraging the Microsoft Foundry ecosystem.
                 </p>
               </div>
             </div>
@@ -402,7 +423,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-blue-500/10 text-blue-300 px-2 py-0.5 rounded border border-blue-500/30 font-bold">AI-200</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Issued by Microsoft  
+                  Implementing production-grade AI solutions on Azure, focusing on scalable back-end infrastructure, containerized services, and vector data management.
                 </p>
               </div>
             </div>
@@ -424,7 +445,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-red-500/10 text-red-400 px-2 py-0.5 rounded border border-red-500/30 font-bold">Red Team Leaders</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Issued by Red Team Leaders
+                  Engineering robust defensive architectures for LLM systems, specializing in mitigating prompt injection, jailbreaks, and RAG-based data exfiltration.
                 </p>
               </div>
             </div>
@@ -446,7 +467,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/30 font-bold">Hugging Face</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Issued by Hugging Face
+                  Mastering reinforcement learning theory and policy optimization to develop autonomous agents capable of complex decision-making in simulated environments.
                 </p>
               </div>
             </div>
@@ -468,7 +489,7 @@ export default function Home() {
                   <span className="text-[10px] uppercase tracking-wide bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/30 font-bold">Astronomer</span>
                 </div>
                 <p className="text-xs text-slate-400 leading-relaxed font-sans">
-                  Issued by Astronomer 
+                  Architecting scalable data pipelines and orchestrating complex workflow dependencies for automated machine learning lifecycles.
                 </p>
               </div>
             </div>
@@ -477,7 +498,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- TECHNICAL SKILLS --- */}
-        <motion.section {...fadeInUp} className="space-y-6">
+        <motion.section id="skills" {...fadeInUp} className="space-y-6 pt-12">
           <h2 className="text-lg font-semibold tracking-tight flex items-center gap-2 text-slate-100">
             <span className="text-blue-500 font-mono text-base">&gt;</span> Technical Skills
           </h2>
@@ -514,7 +535,7 @@ export default function Home() {
         </motion.section>
 
         {/* --- GET IN TOUCH SECTION --- */}
-        <motion.section {...fadeInUp} className="pt-12 border-t border-slate-800 text-center space-y-6">
+        <motion.section id="contact" {...fadeInUp} className="pt-24 border-t border-slate-800 text-center space-y-6">
           <div className="space-y-3">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">Let's Build Something.</h2>
             <p className="text-slate-400 text-sm max-w-md mx-auto leading-relaxed">
